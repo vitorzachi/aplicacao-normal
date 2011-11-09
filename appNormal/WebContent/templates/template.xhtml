@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+<h:head>
+	<title>
+		<ui:insert name="title">Pet+</ui:insert>
+	</title>
+</h:head>
+
+<h:body>
+	<f:view contentType="text/html">
+		<h3>#{infoLoginMB.getUsuarioLogado().getEmpresa().getNome()}</h3>
+		<h4>Usuário logado: #{infoLoginMB.getUsuarioLogado().getNome()}</h4>
+		<p:messages />
+		<h:form>
+			<p:menubar>
+				<p:menuitem value="Home" action="#{urlManagerMB.home}" ajax="false" />
+				<p:submenu label="Cadastros">
+					<p:menuitem value="Clientes" action="#{urlManagerMB.cadastroCliente}" ajax="false" />
+					<p:menuitem value="Animais" action="#{urlManagerMB.cadastroAnimal}" ajax="false" />
+					<p:menuitem value="Tipos de Animais" action="#{urlManagerMB.cadastroTipoAnimal}" ajax="false" />
+					<p:menuitem value="Atividades" action="#{urlManagerMB.cadastroAtividade}" ajax="false" />
+					<p:menuitem value="Cep" action="#{urlManagerMB.cadastroCep}" ajax="false" />
+					<p:menuitem value="Cidades" action="#{urlManagerMB.cadastroCidade}" ajax="false" />
+					<p:menuitem value="Dados da Empresa" action="#{urlManagerMB.cadastroEmpresa}" ajax="false" />
+					<p:menuitem value="Unidade Federativa" action="#{urlManagerMB.cadastroUnidadeFederativa}" ajax="false" />
+				</p:submenu>
+
+				<p:submenu label="Atendimento">
+					<p:menuitem value="Atendimento" action="#{urlManagerMB.cadastroAtendimento}" ajax="false" />
+				</p:submenu>
+
+				<p:submenu label="Segurança">
+					<p:menuitem value="Usuários" action="#{urlManagerMB.cadastroUsuario}" ajax="false" />
+				</p:submenu>
+
+				<p:menuitem value="Logout" action="#{infoLoginMB.logout}" ajax="false" />
+			</p:menubar>
+
+		</h:form>
+
+		<ui:insert name="conteudo">
+			Default content is here...
+		</ui:insert>
+
+	</f:view>
+</h:body>
+</html>

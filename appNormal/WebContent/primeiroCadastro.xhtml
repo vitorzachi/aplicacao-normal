@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cadastro</title>
+</h:head>
+
+<h:body>
+
+	<h2>Seus dados</h2>
+	<p:messages />
+	<h:form prependId="false" id="formLogin">
+		<p:inputText value="#{primeiroCadastroMB.login}" required="true" requiredMessage="Login deve ser preenchido" />
+		<p:inputText value="#{primeiroCadastroMB.nome}" required="true" requiredMessage="Seu nome deve ser preenchido" />
+		<p:password value="#{primeiroCadastroMB.senha}" required="true" requiredMessage="Senha deve ser preenchida" feedback="false" />
+		<p:commandButton ajax="false" action="#{primeiroCadastroMB.criaUsuario}" value="Confirmar" />
+	</h:form>
+</h:body>
+</html>
