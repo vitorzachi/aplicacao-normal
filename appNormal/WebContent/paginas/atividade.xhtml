@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<h:form>
+		<h2>Cadastro de atividades</h2>
+		<p:messages />
+
+		<div class="campos_cadastro">
+			<ul>
+				<li>
+					<h:outputLabel value="Nome da atividade:" for="nomeAtividade" />
+					<p:inputText id="nomeAtividade" value="#{atividadeMB.entidade.nome}" required="true" requiredMessage="Nome da atividade deve ser preenchido."
+						maxlength="50" />
+				</li>
+
+				<li>
+					<h:outputLabel value="Custo da atividade:" for="valorAtividade" />
+					<p:inputText id="valorAtividade" value="#{atividadeMB.entidade.valor}" required="true" requiredMessage="Valor da atividade deve ser preenchido."
+						maxlength="50" />
+				</li>
+			</ul>
+		</div>
+
+		<div class="comandos">
+			<p:commandButton ajax="false" action="#{atividadeMB.salvar}" value="Salvar" />
+			<p:commandButton  ajax="false" action="#{atividadeMB.inicio}" value="Novo" />
+			<p:commandButton  ajax="false" action="#{atividadeMB.remover}" value="Remover" />
+		</div>
+
+	</h:form>
+</html>
